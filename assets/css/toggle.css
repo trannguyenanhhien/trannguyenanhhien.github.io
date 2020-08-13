@@ -1,0 +1,95 @@
+@media (max-width: 768px) {
+
+  .toggle-cover{
+    display: none!important;
+  }
+
+  .toggle-cover{
+    display: block;
+  }
+  .btn-tog {
+    display: block!important;
+  }
+  .btn-toggle{
+    position: fixed;
+    right: 0;
+    margin-top: 50px;
+    margin-right: 2%;
+  }
+  .btn-toggle{
+    font-size: 20px;
+  }
+  .m-toggle{
+    color: rgb(102, 179, 143);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+  .toggle-cover{
+    display: none!important;
+  }
+
+  .toggle-cover{
+    display: block;
+  }
+  .btn-tog {
+    display: block!important;
+  }
+  .btn-toggle{
+    position: fixed;
+    right: 0;
+    margin-top: 50px;
+    margin-right: 5%;
+  }
+  .btn-toggle{
+    font-size: 30px;
+  }
+  .m-toggle{
+    color: rgb(102, 179, 143);
+  }
+}
+
+.toggle-cover{
+    position: fixed;
+    margin-top: 150px;
+    margin-left: 20px;
+}
+  
+.svg-wrapper {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    display: inline-block;
+  }
+  
+  #shape {
+    stroke-width: 3px;
+    fill: transparent;
+    stroke: #009FFD;
+    stroke-dasharray: 85 300;
+    stroke-dashoffset: -220;
+    transition: 1s all ease;
+  }
+  #text {
+    margin-top: -35px;
+    text-align: center;
+  }
+  
+  #text a {
+    color: #4f4f4f;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1.1em;
+  }
+
+  #text:hover{
+    cursor: pointer;
+  }
+  
+  .svg-wrapper:hover #shape {
+    stroke-dasharray: 100 0;
+    stroke-width: 3px;
+    stroke-dashoffset: 50;
+    stroke: #06D6A0;
+    cursor: pointer;
+  }
