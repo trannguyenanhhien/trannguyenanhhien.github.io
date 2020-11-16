@@ -20,6 +20,28 @@
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
 
+	<style>
+		input[type=checkbox] {
+		display: none;
+		}
+
+		.containerCheck img {
+		transition: transform 0.5s ease;
+		cursor: zoom-in;
+		}
+
+		input[type=checkbox]:checked ~ label > img {
+		transform: scale(4);
+		cursor: zoom-out;
+		position:fixed !important;
+		}
+
+		.containerCheck2 img {
+		transition: transform 0.5s ease;
+		cursor: zoom-in;
+		}
+	</style>
+
 </head> 
 
 <body>
@@ -72,7 +94,12 @@
 				<hr>
 				<div class="resume-intro py-3">
 					<div class="media flex-column flex-md-row align-items-center">
-						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
+						<div class="containerCheck">
+							<input type="checkbox" id="zoomCheck">
+							<label for="zoomCheck">
+								<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
+							</label>
+						</div>
 						<div class="media-body text-left">
 							<p class="mb-0" id="vi" class="vi">Xin chào! Tôi là Hiển.<br>
 								Tôi là sinh viên năm 4 ngành Hệ thống Thông tin tại Đại học Công nghệ thông tin 
@@ -304,7 +331,12 @@
 				<hr>
 				<div class="resume-intro py-3">
 					<div class="media flex-column flex-md-row align-items-center">
-						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
+						<div class="containerCheck2">
+							<input type="checkbox" id="zoomCheck2">
+							<label for="zoomCheck2">
+								<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
+							</label>
+						</div>
 						<div class="media-body text-left">
 							<p class="mb-0" id="en" class="en">Hi! I'm Hien.<br>
 								I'm a fourth-year student of the department of Information System at University of Information Technology
