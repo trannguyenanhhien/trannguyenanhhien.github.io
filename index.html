@@ -28,6 +28,8 @@
 		.containerCheck img {
 		transition: transform 0.5s ease;
 		cursor: zoom-in;
+		position: relative;
+		z-index: 2;
 		}
 
 		input[type=checkbox]:checked ~ label > img {
@@ -37,9 +39,8 @@
 		z-index: 2;
 		}
 
-		.containerCheck2 img {
-		transition: transform 0.5s ease;
-		cursor: zoom-in;
+		.vi {
+			display: none;
 		}
 	</style>
 
@@ -52,41 +53,46 @@
 		</a>
 	</div>
 	<div class="toggle-cover" id="toggle-cover">
-		<div class="svg-wrapper">
+		<div class="svg-wrapper" onclick="Vietsub();">
 			<svg height="40" width="150">
 			  <rect id="shape" height="40" width="150" />
 			  <div id="text">
-				<a onclick="Vietsub();"><span class="spot"></span>Tiếng Việt</a>
+				<a><span class="spot"></span>Tiếng Việt</a>
 			  </div>
 			</svg>
 		  </div><br><br>
-		<div class="svg-wrapper">
+		<div class="svg-wrapper" onclick="Engsub();">
 			<svg height="40" width="150">
 			  <rect id="shape" height="40" width="150" />
 			  <div id="text">
-				<a onclick="Engsub();"><span class="spot"></span>English</a>
+				<a><span class="spot"></span>English</a>
 			  </div>
 			</svg>
 		  </div>
 	</div>
 
 	
-	<div class="main-wrapper" id="vi" style="display: none;">
+	<div class="main-wrapper">
 		<div class="container px-3 px-lg-5">
 			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
 				
 				<div class="resume-header">
 					<div class="row align-items-center">
-						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9 vi">
 							<h2 class="resume-name mb-0">Trần Nguyễn Anh Hiển</h2>
 							<div class="resume-tagline mb-3 mb-md-0">Lập trình viên</div>
+						</div><!--//resume-title-->
+						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9 en">
+							<h2 class="resume-name mb-0">Tran Nguyen Anh Hien</h2>
+							<div class="resume-tagline mb-3 mb-md-0">Developer</div>
 						</div><!--//resume-title-->
 						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
 							<ul class="list-unstyled mb-0">
 								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">039 661 7879</a></li>
 								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:trannguyenanhhien@gmail.com?subject=subject text">trannguyenanhhien@gmail.com</a></li>
 								<li class="mb-2"><i class="fas fab fa-github-square fa-fw fa-lg mr-2"></i><a class="resume-link" href=https://www.github.com/trannguyenanhhien>github.com/trannguyenanhhien</a></li>
-								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Hồ Chí Minh</li>
+								<li class="mb-0 vi"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Hồ Chí Minh</li>
+								<li class="mb-0 en"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Ho Chi Minh</li>
 							</ul>
 						</div><!--//resume-contact-->
 					</div><!--//row-->
@@ -101,13 +107,22 @@
 								<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
 							</label>
 						</div>
-						<div class="media-body text-left">
-							<p class="mb-0" id="vi" class="vi">Xin chào! Tôi là Hiển.<br>
+						<div class="media-body text-left vi">
+							<p class="mb-0">Xin chào! Tôi là Hiển.<br>
 								Tôi là sinh viên năm 4 ngành Hệ thống Thông tin tại Đại học Công nghệ thông tin 
 								- Đại học Quốc Gia Thành phố Hồ Chí Minh. 
 								Tôi đã đạt được nhiều kỹ năng từ một vài đồ án môn học bao gồm HTML5, CSS3, JavaScript, PHP, Node.js và vài kỹ năng khác. 
 								Hiện tại, tôi chưa có kinh nghiệm ở các dự án thực tế. 
 								Vì vậy, tôi mong sẽ được đón nhận những thử thách mới trong thời gian sắp tới.  </p>
+						</div><!--//media-body-->
+						<div class="media-body text-left en">
+							<p class="mb-0">Hi! I'm Hien.<br>
+								I'm a fourth-year student of the department of Information System at University of Information Technology
+								 - Viet Nam National University Ho Chi Minh City. 
+								 I also gained a lot of skills from some projects at university HTML5, CSS3, JavaScript, PHP, Node.js and some other skills. 
+								 Present, I've not experience in actual project yet. 
+								So, i'm willing to get upcoming challenges.  
+							</p>
 						</div><!--//media-body-->
 					</div>
 				</div><!--//resume-intro-->
@@ -116,35 +131,18 @@
 					<div class="row">
 						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
 							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Kinh Nghiệm</h3>
-								<!-- <div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Học tập tại trường</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">UIT | 2017 - Present</div>
-										
-									</div>
-									<div class="item-content">
-										<p>Sau 3 năm học tập tại trường, tôi đã tích lũy cho mình một lượng kiến thức cơ bản về lập trình, 
-											có thể thiết kế giao diện với HTML/CSS/JS, 
-											xây dựng website bằng ngôn ngữ backend. 
-											Bên cạnh đó là khả năng DevOps, SEO, kỹ năng mềm,...
-										</p>
-										<ul class="resume-list">
-											<li>Lorem ipsum dolor sit amet, consectetuer.</li>
-											<li>Aenean commodo ligula eget dolor.</li>
-											<li>Etiam ultricies nisi vel augue.</li>
-										</ul>
-									</div>
-								</div> -->
-								<!--//item -->
+								<h3 class="text-uppercase resume-section-heading mb-4 vi">Kinh Nghiệm</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4 en">Experience</h3>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Thực tập Angular</h4>
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0 vi">Thực tập JavaScript</h4>
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0 en">Intern JavaScript</h4>
 										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">GoCode | 2019</div>
 										
 									</div>
 									<div class="item-content">
-										<p>Thực tập Angular tại GoCode, biết các khái niệm cơ bản về Typescript cũng như Angular.</p>
+										<p class="vi">Thực tập JavaScript tại GoCode, biết các khái niệm cơ bản về JavaScript và TypeScript.</p>
+										<p class="en">Intern JavaScript at GoCode, knew some basic definition about JavaScript and TypeScript.</p>
 										<!-- <ul class="resume-list">
 											<li>Lorem ipsum dolor sit amet, consectetuer.</li>
 											<li>Aenean commodo ligula eget dolor.</li>
@@ -153,22 +151,24 @@
 									<div class="item">
 										<div class="item-heading row align-items-center mb-2">
 											<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Laravel</h4>
-											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Đồ án môn học | 2019</div>
-											
+											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right vi">Đồ án môn học | 2019</div>
+											<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right en">Study Project | 2019</div>
 										</div>
 										<div class="item-content">
-											<p>Xây dựng được website bán hàng thiết bị điện tử bằng Laravel.</p>
+											<p class="vi">Xây dựng được website bán hàng thiết bị điện tử bằng Laravel.</p>
+											<p class="en">Building the website selling electronics by Laravel.</p>
 										</div>
 									</div><!--//item-->
 								</div><!--//item-->
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
 										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Wordpress</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Đồ án môn học | 2020</div>
-										
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right vi">Đồ án môn học | 2019</div>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right en">Study Project | 2019</div>
 									</div>
 									<div class="item-content">
-										<p>Xây dựng được website bán phụ kiện thời trang bằng Wordpress.</p>
+										<p class="vi">Xây dựng được website bán phụ kiện thời trang bằng Wordpress.</p>
+										<p class="en">Building the website selling fashion accessories by Wordpress.</p>
 									</div>
 								</div><!--//item-->
 									
@@ -177,21 +177,25 @@
 
 							
 							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4 vi">Dự Án</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4 en">Projects</h3>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
 										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Gemingear</h4>
 										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">2019</div>
-										
 									</div>
 									<div class="item-content">
-										<p>Đây là đồ án môn học <i>Phát triển và ứng dụng web</i> được viết bằng ngôn ngữ <strong>PHP Laravel Framework</strong>. 
+										<p class="vi">Đây là đồ án môn học <i>Phát triển và ứng dụng web</i> được viết bằng ngôn ngữ <strong>PHP Laravel Framework</strong>. 
 											Website bán thiết bị điện tử bao gồm: laptop, màn hình, bàn phím,... 
 											Website được xây dựng dựa trên mô hình MVC, tích hợp các API phù hợp.
 										</p>
-										<p>
-											Github: <a href="https://github.com/trannguyenanhhien/LaravelProject">https://github.com/trannguyenanhhien/LaravelProject</a>
+										<p class="en">This is study project <i>Web application development</i> coded by <strong>PHP Laravel Framework</strong>. 
+											Website selling electronics includes: laptop, screen, keyboard,... 
+											Website is built based on MVC model and integrated some APIs.
 										</p>
+										<!-- <p>
+											Github: <a href="https://github.com/trannguyenanhhien/LaravelProject">https://github.com/trannguyenanhhien/LaravelProject</a>
+										</p> -->
 										
 									</div>
 								</div><!--//item-->
@@ -202,19 +206,23 @@
 										
 									</div>
 									<div class="item-content">
-										<p>Đây là đồ án môn học <i>Thương mại điện tử</i> được viết bằng ngôn ngữ <strong>PHP Wordpress</strong>.
-											Website bán phụ kiện thời trang bao gồm: giày dép, túi xách, đồng hồ,... cho chị em phụ nữ.
+										<p class="vi">Đây là đồ án môn học <i>Thương mại điện tử</i> được viết bằng ngôn ngữ <strong>PHP Wordpress</strong>.
+											Website bán phụ kiện thời trang bao gồm: giày dép, túi xách, đồng hồ,... cho phụ nữ.
 										</p>
-										<p>
+										<p class="en">This is study project <i>E-commerce</i> coded by <strong>PHP Wordpress</strong>.
+											Website selling accessories includes: shoes, bags, watches,... for the women.
+										</p>
+										<!-- <p>
 											Website: <a href="https://bendeathcode.com/">https://bendeathcode.com/</a>
-										</p>
+										</p> -->
 									</div>
 								</div><!--//item-->
 							</section><!--//project-section-->	
 						</div><!--//resume-main-->
 						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
 							<section class="skills-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Kỹ năng</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4 vi">Kỹ năng</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4 en">Skills</h3>
 								<div class="item">
 									<h4 class="item-title">Front end</h4>
 									<ul class="list-unstyled resume-skills-list">
@@ -241,7 +249,8 @@
 											</ul>
 										</div><!--//item-->
 									<div class="item">
-										<h4 class="item-title">Khác</h4>
+										<h4 class="item-title vi">Khác</h4>
+										<h4 class="item-title en">Others</h4>
 										<ul class="list-unstyled resume-skills-list">
 											<li class="mb-2">Photoshop</li>
 											<li class="mb-2">SEO<li>
@@ -250,36 +259,70 @@
 											</ul>
 										</div><!--//item-->
 									</section><!--//skills-section-->
-									<section class="education-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Trình độ</h3>
-										<ul class="list-unstyled resume-education-list">
-											<li class="mb-3">
-												<div class="resume-degree font-weight-bold">THPT Phan Đình Phùng</div>
-												<div class="resume-degree-org text-muted">Highschool Sông Cầu, Phú Yên</div>
-												<div class="resume-degree-time text-muted">2014 - 2017</div>
-											</li>
-											<li>
-												<div class="resume-degree font-weight-bold">ĐH Công nghệ thông tin</div>
-												<div class="resume-degree-org text-muted">ĐHQG - Tp.HCM</div>
-												<div class="resume-degree-time text-muted">2017 - 2021</div>
-											</li>
-										</ul>
-									</section>
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Ngôn ngữ</h3>
-										<ul class="list-unstyled resume-lang-list">
-											<li class="mb-2">Tiếng Việt <span class="text-muted">(Native)</span></li>
-											<li>Tiếng Anh <span class="text-muted">(Basic)</span></li>
-										</ul>
-									</section><!--//certificates-section-->
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Sở thích</h3>
-										<ul class="list-unstyled resume-interests-list mb-0">
-											<li class="mb-2">Bóng đá</li>
-											<li class="mb-2">Đọc sách</li>
-											<li class="mb-2">Nghe nhạc</li>
-										</ul>
-									</section><!--//certificates-section-->
+									<div class="vi">
+										<section class="education-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Trình độ</h3>
+											<ul class="list-unstyled resume-education-list">
+												<li class="mb-3">
+													<div class="resume-degree font-weight-bold">THPT Phan Đình Phùng</div>
+													<div class="resume-degree-org text-muted">Highschool Sông Cầu, Phú Yên</div>
+													<div class="resume-degree-time text-muted">2014 - 2017</div>
+												</li>
+												<li>
+													<div class="resume-degree font-weight-bold">ĐH Công nghệ thông tin</div>
+													<div class="resume-degree-org text-muted">ĐHQG - Tp.HCM</div>
+													<div class="resume-degree-time text-muted">2017 - 2021</div>
+												</li>
+											</ul>
+										</section>
+										<section class="skills-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Ngôn ngữ</h3>
+											<ul class="list-unstyled resume-lang-list">
+												<li class="mb-2">Tiếng Việt <span class="text-muted">(Native)</span></li>
+												<li>Tiếng Anh <span class="text-muted">(Basic)</span></li>
+											</ul>
+										</section><!--//certificates-section-->
+										<section class="skills-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Sở thích</h3>
+											<ul class="list-unstyled resume-interests-list mb-0">
+												<li class="mb-2">Bóng đá</li>
+												<li class="mb-2">Đọc sách</li>
+												<li class="mb-2">Nghe nhạc</li>
+											</ul>
+										</section><!--//certificates-section-->
+									</div>
+									<div class="en">
+										<section class="education-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
+											<ul class="list-unstyled resume-education-list">
+												<li class="mb-3">
+													<div class="resume-degree font-weight-bold">THPT Phan Dinh Phung</div>
+													<div class="resume-degree-org text-muted">Highschool Song Cau, Phu Yen</div>
+													<div class="resume-degree-time text-muted">2014 - 2017</div>
+												</li>
+												<li>
+													<div class="resume-degree font-weight-bold">UIT</div>
+													<div class="resume-degree-org text-muted">VN National University HCMC</div>
+													<div class="resume-degree-time text-muted">2017 - 2021</div>
+												</li>
+											</ul>
+										</section>
+										<section class="skills-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Language</h3>
+											<ul class="list-unstyled resume-lang-list">
+												<li class="mb-2">Vietnamese <span class="text-muted">(Native)</span></li>
+												<li>English <span class="text-muted">(Basic)</span></li>
+											</ul>
+										</section><!--//certificates-section-->
+										<section class="skills-section py-3">
+											<h3 class="text-uppercase resume-section-heading mb-4">Interest</h3>
+											<ul class="list-unstyled resume-interests-list mb-0">
+												<li class="mb-2">Soccer</li>
+												<li class="mb-2">Reading book</li>
+												<li class="mb-2">Listening to music</li>
+											</ul>
+										</section><!--//certificates-section-->
+									</div>
 									
 								</aside><!--//resume-aside-->
 							</div><!--//row-->
@@ -288,244 +331,7 @@
 						<div class="resume-footer text-center">
 							<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
 								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" target="_blank" href="https://www.facebook.com/tnah.gon"><i class="fab fab fa-facebook-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@tnah.gon</span></a></li>
-								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" target="_blank" href="https://www.instagram.com/tnah.gon/"><i class="fab fab fa-instagram-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">tnah.gon</span></a></li>
-								<!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@twittername</span></a></li> -->
-							</ul>
-						</div><!--//resume-footer-->
-					</article>
-					
-				</div><!--//container-->
-				
-				<footer class="footer text-center py-4">
-					<!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-					<small class="copyright text-muted">© CV Developer <i class="fas fa-heart"></i> by Gon</small>
-				</footer>
-				
-			</div><!--//main-wrapper-->
-
-
-
-
-
-
-	<div class="main-wrapper" id="en">
-		<div class="container px-3 px-lg-5">
-			<article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
-				
-				<div class="resume-header">
-					<div class="row align-items-center">
-						<div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-							<h2 class="resume-name mb-0">Tran Nguyen Anh Hien</h2>
-							<div class="resume-tagline mb-3 mb-md-0">Developer</div>
-						</div><!--//resume-title-->
-						<div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
-							<ul class="list-unstyled mb-0">
-								<li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a class="resume-link" href="tel:#">039 661 7879</a></li>
-								<li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a class="resume-link" href="mailto:trannguyenanhhien@gmail.com?subject=subject text">trannguyenanhhien@gmail.com</a></li>
-								<li class="mb-2"><i class="fas fab fa-github-square fa-fw fa-lg mr-2"></i><a class="resume-link" href=https://www.github.com/trannguyenanhhien>github.com/trannguyenanhhien</a></li>
-								<li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Ho Chi Minh</li>
-							</ul>
-						</div><!--//resume-contact-->
-					</div><!--//row-->
-					
-				</div><!--//resume-header-->
-				<hr>
-				<div class="resume-intro py-3">
-					<div class="media flex-column flex-md-row align-items-center">
-						<div class="containerCheck2">
-							<input type="checkbox" id="zoomCheck2">
-							<label for="zoomCheck2">
-								<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="assets/images/avatar.jpg" alt="image">
-							</label>
-						</div>
-						<div class="media-body text-left">
-							<p class="mb-0" id="en" class="en">Hi! I'm Hien.<br>
-								I'm a fourth-year student of the department of Information System at University of Information Technology
-								 - Viet Nam National University Ho Chi Minh City. 
-								 I also gained a lot of skills from some projects at university HTML5, CSS3, JavaScript, PHP, Node.js and some other skills. 
-								 Present, I've not experience in actual project yet. 
-								So, i'm willing to get upcoming challenges.  
-							</p>
-						</div><!--//media-body-->
-					</div>
-				</div><!--//resume-intro-->
-				<hr>
-				<div class="resume-body">
-					<div class="row">
-						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
-							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Experience</h3>
-								<!-- <div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Học tập tại trường</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">UIT | 2017 - Present</div>
-										
-									</div>
-									<div class="item-content">
-										<p>Sau 3 năm học tập tại trường, tôi đã tích lũy cho mình một lượng kiến thức cơ bản về lập trình, 
-											có thể thiết kế giao diện với HTML/CSS/JS, 
-											xây dựng website bằng ngôn ngữ backend. 
-											Bên cạnh đó là khả năng DevOps, SEO, kỹ năng mềm,...
-										</p>
-										<ul class="resume-list">
-											<li>Lorem ipsum dolor sit amet, consectetuer.</li>
-											<li>Aenean commodo ligula eget dolor.</li>
-											<li>Etiam ultricies nisi vel augue.</li>
-										</ul>
-									</div>
-								</div> -->
-								<!--//item -->
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Intern Angular</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">GoCode | 2019</div>
-										
-									</div>
-									<div class="item-content">
-										<p>Intern Angular at GoCode, knew some basic definition about Typescript and Angular.</p>
-										<!-- <ul class="resume-list">
-											<li>Lorem ipsum dolor sit amet, consectetuer.</li>
-											<li>Aenean commodo ligula eget dolor.</li>
-										</ul> -->
-									</div>
-								</div><!--//item-->
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Laravel</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Project | 2019</div>
-										
-									</div>
-									<div class="item-content">
-										<p>Building the website selling electronics by Laravel.</p>
-									</div>
-								</div><!--//item-->
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Wordpress</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">Project | 2020</div>
-										
-									</div>
-									<div class="item-content">
-										<p>Building the website selling fashion accessories by Wordpress.</p>
-									</div>
-								</div><!--//item-->
-								
-							</section><!--//work-section-->
-
-							
-							<section class="project-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Projects</h3>
-								<div class="item mb-3">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Gemingear</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">2019</div>
-										
-									</div>
-									<div class="item-content">
-										<p>This is project <i>Web application development</i> coded by <strong>PHP Laravel Framework</strong>. 
-											Website selling electronics includes: laptop, screen, keyboard,... 
-											Website is built based on MVC model and integrated some APIs.
-										</p>
-										<p>
-											Github: <a href="https://github.com/trannguyenanhhien/LaravelProject">https://github.com/trannguyenanhhien/LaravelProject</a>
-										</p>
-										
-									</div>
-								</div><!--//item-->
-								<div class="item">
-									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Bag Store</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-left text-md-right">2020</div>
-										
-									</div>
-									<div class="item-content">
-										<p>This is project <i>E-commerce</i> coded by <strong>PHP Wordpress</strong>.
-											Website selling accessories includes: shoes, bags, watches,... for the women.
-										</p>
-										<p>
-											Website: <a href="https://bendeathcode.com/">https://bendeathcode.com/ </a>
-										</p>
-									</div>
-								</div><!--//item-->
-							</section><!--//project-section-->	
-						</div><!--//resume-main-->
-						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
-							<section class="skills-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
-								<div class="item">
-									<h4 class="item-title">Front end</h4>
-									<ul class="list-unstyled resume-skills-list">
-										<li class="mb-2">HTML/CSS/JS</li>
-										<li class="mb-2">React/Redux/Hooks<li>
-										<li class="mb-2">Angular<li>
-										<li class="mb-2">Material-UI<li>
-										</ul>
-									</div><!--//item-->
-									<div class="item">
-										<h4 class="item-title">Back end</h4>
-										<ul class="list-unstyled resume-skills-list">
-											<li class="mb-2">Laravel</li>
-											<li class="mb-2">Wordpress<li>
-											<li class="mb-2">Node.js (Express, Nestjs)<li>
-											</ul>
-										</div><!--//item-->
-									<div class="item">
-										<h4 class="item-title">Database</h4>
-										<ul class="list-unstyled resume-skills-list">
-											<li class="mb-2">SQL Server</li>
-											<li class="mb-2">MySQL<li>
-											<li class="mb-2">Postgres<li>
-											</ul>
-										</div><!--//item-->
-									<div class="item">
-										<h4 class="item-title">Others</h4>
-										<ul class="list-unstyled resume-skills-list">
-											<li class="mb-2">Photoshop</li>
-											<li class="mb-2">SEO<li>
-											<li class="mb-2">Github<li>
-											<li class="mb-2">Trello<li>
-											</ul>
-										</div><!--//item-->
-									</section><!--//skills-section-->
-									<section class="education-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
-										<ul class="list-unstyled resume-education-list">
-											<li class="mb-3">
-												<div class="resume-degree font-weight-bold">THPT Phan Dinh Phung</div>
-												<div class="resume-degree-org text-muted">Highschool Song Cau, Phu Yen</div>
-												<div class="resume-degree-time text-muted">2014 - 2017</div>
-											</li>
-											<li>
-												<div class="resume-degree font-weight-bold">UIT</div>
-												<div class="resume-degree-org text-muted">VN National University HCMC</div>
-												<div class="resume-degree-time text-muted">2017 - 2021</div>
-											</li>
-										</ul>
-									</section>
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Language</h3>
-										<ul class="list-unstyled resume-lang-list">
-											<li class="mb-2">Vietnamese <span class="text-muted">(Native)</span></li>
-											<li>English <span class="text-muted">(Basic)</span></li>
-										</ul>
-									</section><!--//certificates-section-->
-									<section class="skills-section py-3">
-										<h3 class="text-uppercase resume-section-heading mb-4">Interest</h3>
-										<ul class="list-unstyled resume-interests-list mb-0">
-											<li class="mb-2">Soccer</li>
-											<li class="mb-2">Reading book</li>
-											<li class="mb-2">Listening to music</li>
-										</ul>
-									</section><!--//certificates-section-->
-									
-								</aside><!--//resume-aside-->
-							</div><!--//row-->
-						</div><!--//resume-body-->
-						<hr>
-						<div class="resume-footer text-center">
-							<ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" target="_blank" href="https://www.facebook.com/tnah.gon"><i class="fab fab fa-facebook-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@tnah.gon</span></a></li>
-								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" target="_blank" href="https://www.instagram.com/tnah.gon/"><i class="fab fab fa-instagram-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">tnah.gon</span></a></li>
+								<li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" target="_blank" href="https://www.instagram.com/tnah.gon/"><i class="fab fab fa-instagram-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">_gonwsz</span></a></li>
 								<!-- <li class="list-inline-item mb-lg-0 mr-lg-3"><a class="resume-link" href="#"><i class="fab fa-twitter-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">@twittername</span></a></li> -->
 							</ul>
 						</div><!--//resume-footer-->
@@ -543,16 +349,24 @@
 			
 </body>
 <script>
-	function Engsub(){
-		document.getElementById("en").style.display = 'block';
-		document.getElementById("vi").style.display = 'none';
-	}
+	var en = document.getElementsByClassName("en");
+	var vi = document.getElementsByClassName("vi");
 	function Vietsub(){
-		document.getElementById("en").style.display = 'none';
-		document.getElementById("vi").style.display = 'block';
+		for(i=0;i<en.length; i++){
+			en[i].style.display = "none";
+		}
+		for(i=0;i<vi.length; i++){
+			vi[i].style.display = "block";
+		}
 	}
-	
-	var dem = 0;
+	function Engsub(){
+		for(i=0;i<vi.length; i++){
+			vi[i].style.display = "none";
+		}
+		for(i=0;i<en.length; i++){
+			en[i].style.display = "block";
+		}
+	}
 
 	function trans(){
 		dem++;
